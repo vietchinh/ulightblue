@@ -74,6 +74,21 @@ rpm:
     # Remove the native firefox (from Fedora) in favor of the Flatpak.
     - firefox
     - firefox-langpacks
+    - kf5-akonadi-server-mysql
+    - kf5-akonadi-server
+    - kmousetool
+    - okular
+    - krfb-libs
+    - krfb
+    - kmag
+    - mariadb-backup
+    - mariadb-cracklib-password-check
+    - mariadb-common
+    - mariadb-server-utils
+    - mariadb-server
+    - mariadb-errmsg
+    - mariadb-gssapi-server
+    - mariadb
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
   # Whether to embed "yafti" into the OS image and configure it to autostart,
