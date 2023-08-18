@@ -49,7 +49,7 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # Copy the build script and all custom scripts.
 COPY scripts /tmp/scripts
 
-COPY --from=ghcr.io/ublue-os/config:latest /files/ublue-os/signing /
+RUN podman pull ghcr.io/ublue-os/config && rpm-ostree install --assumeyes --apply-live --force-replacefiles $(find ~/.local/share/containers -name ublue-os-signing.noarch.rpm 2>/dev/null)
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
