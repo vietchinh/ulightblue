@@ -1,4 +1,4 @@
-name: build-ublue
+name: build-ulightblue
 on:
   # Build *every* branch at 10:20pm UTC every day (1 hr delay after "nvidia" builds),
   # regardless of the branch names. (Not just "live, template and main" branches.)
@@ -47,7 +47,7 @@ jobs:
       fail-fast: false
       matrix:
         recipe:
-          - recipe.yml
+          - recipe-ucore-zfs-lxd.yml
 
     steps:
       # Checkout push-to-registry action GitHub repository
