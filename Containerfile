@@ -16,7 +16,7 @@ FROM ${BASE_IMAGE_URL}:${IMAGE_MAJOR_VERSION}
 
 # The default recipe is set to the recipe's default filename
 # so that `podman build` should just work for most people.
-ARG RECIPE=recipe.yml 
+ARG RECIPE=recipe.yml
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
@@ -42,6 +42,8 @@ COPY modules /tmp/modules/
 # It is copied from the official container image since it's not available as an RPM.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
+COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /tmp/
+
 # Run the build script, then clean up temp files and finalize container build.
-RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
-    rm -rf /tmp/* /var/* && ostree container commit
+RUN rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-signing.noarch.rpm && chmod +x /tmp/build.sh && /tmp/build.sh && \
+    rm -rf /tmp/* /var/* && rpm-ostree cleanup -m && ostree container commit
