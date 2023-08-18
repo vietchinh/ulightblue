@@ -1,0 +1,11 @@
+version: "1"
+rules:
+  - base: template
+    upstream: ublue-os:template
+    mergeMethod: rebase
+  - base: master
+    upstream: template
+    mergeMethod: rebase
+  - base: live
+    upstream: template
+    mergeMethod: merge
