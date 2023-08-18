@@ -49,10 +49,10 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 # Copy the build script and all custom scripts.
 COPY scripts /tmp/scripts
 
-COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /tmp/
+COPY --from=ghcr.io/ublue-os/config:latest /files/ublue-os/signing /
 
 # Run the build script, then clean up temp files and finalize container build.
-RUN rpm -ivh /tmp/ublue-os-signing.noarch.rpm && chmod +x /tmp/scripts/build.sh && \
+RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/* && \
         rpm-ostree cleanup -m && ostree container commit
