@@ -6,4 +6,4 @@
 set -oue pipefail
 
 # Your code goes here.
-rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-update-services.noarch.rpm
+rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-update-services.noarch.rpm /tmp/ublue-os-udev-rules.noarch.rpm
