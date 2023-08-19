@@ -6,5 +6,5 @@
 set -oue pipefail
 
 # Your code goes here.
-systemctl enable --global podman
-systemctl enable --global podman-auto-update
+systemctl enable --global podman.service
+systemctl enable --global podman-auto-update.timer
