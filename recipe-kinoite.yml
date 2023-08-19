@@ -91,6 +91,7 @@ rpm:
     - mariadb
     - filelight
     - gwenview
+    - gwenview-libs
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
   # Whether to embed "yafti" into the OS image and configure it to autostart,
