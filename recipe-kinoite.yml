@@ -14,7 +14,7 @@ base-image: quay.io/fedora-ostree-desktops/kinoite
 fedora-version: 38
 
 # This description will be visible in the container metadata.
-description: Ublue kinoite with libvirt qemu kvm virtualization and vfio module
+description: Ublue kinoite with libvirt qemu kvm virtualization
 
 # These scripts will be executed during the container build.
 # Place scripts in the "scripts/" dir and put the corresponding filenames here.
@@ -30,7 +30,6 @@ scripts:
     # Manually listed scripts.
     - udev_services.sh
     - auto-update.sh
-    - vfio.sh
 
   # "Post" scripts run at the end of the build process.
   post:
