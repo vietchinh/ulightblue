@@ -70,6 +70,8 @@ rpm:
     - kate
     - podman
     - distrobox
+    - htop
+    - hwloc-gui
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
@@ -95,6 +97,11 @@ rpm:
     - filelight
     - gwenview
     - gwenview-libs
+    - mariadb-connector-c
+    - mariadb-connector-c-config
+    - perl-DBD-MariaDB
+    - qt5-qtbase-mysql
+
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
   # Whether to embed "yafti" into the OS image and configure it to autostart,
