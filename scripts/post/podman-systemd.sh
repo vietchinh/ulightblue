@@ -6,4 +6,5 @@
 set -oue pipefail
 
 # Your code goes here.
-systemctl enable libvirtd
+systemctl enable --global podman
+systemctl enable --global podman-auto-update
