@@ -6,7 +6,5 @@
 set -oue pipefail
 
 # Your code goes here.
-systemctl enable rpm-ostreed-automatic.timer
-systemctl enable flatpak-system-update.timer
-
-systemctl --global enable flatpak-user-update.timer
+wget https://github.com/ublue-os/main/blob/main/post-install.sh -P /tmp
+sh /tmp/post-install.sh
