@@ -6,5 +6,4 @@
 set -oue pipefail
 
 # Your code goes here.
-wget https://github.com/ublue-os/main/blob/main/post-install.sh -P /tmp
-sh /tmp/post-install.sh
+wget https://github.com/ublue-os/main/blob/main/post-install.sh -P /tmp/scripts/post
