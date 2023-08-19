@@ -28,8 +28,7 @@ scripts:
     # Automatically runs script files within "scripts/pre/".
     - autorun.sh
     # Manually listed scripts.
-    - udev_services.sh
-    - auto-update.sh
+    - kinoite.sh
 
   # "Post" scripts run at the end of the build process.
   post:
