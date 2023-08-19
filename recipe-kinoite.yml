@@ -28,7 +28,7 @@ scripts:
     # Automatically runs script files within "scripts/pre/".
     - autorun.sh
     # Manually listed scripts.
-    # - example_pre.sh
+    - udev.sh
 
   # "Post" scripts run at the end of the build process.
   post:
@@ -89,6 +89,8 @@ rpm:
     - mariadb-errmsg
     - mariadb-gssapi-server
     - mariadb
+    - filelight
+    - gwenview
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
   # Whether to embed "yafti" into the OS image and configure it to autostart,

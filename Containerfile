@@ -50,9 +50,11 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 COPY scripts /tmp/scripts
 
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /tmp/
+COPY --from=ghcr.io/ublue-os/config:latest /files/ublue-os/update-services /
+COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/
 
 # Run the build script, then clean up temp files and finalize container build.
-RUN  rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-signing.noarch.rpm && chmod +x /tmp/scripts/build.sh && \
+RUN rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-signing.noarch.rpm && chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh && \
         rm -rf /tmp/* /var/* && \
         rpm-ostree cleanup -m && ostree container commit

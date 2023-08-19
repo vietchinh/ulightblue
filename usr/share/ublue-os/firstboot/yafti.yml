@@ -54,32 +54,17 @@ screens:
         system: true
       groups:
         Core GNOME Apps:
-          description: Core system applications for the GNOME desktop environment.
+          description: Core system applications for the KDE desktop environment.
           default: true
           packages:
-            - Calculator: org.gnome.Calculator
-            - Calendar: org.gnome.Calendar
-            - Characters: org.gnome.Characters
-            - Cheese: org.gnome.Cheese
-            - Clocks: org.gnome.clocks
-            - Connections: org.gnome.Connections
-            - Contacts: org.gnome.Contacts
-            - Disk Usage Analyzer: org.gnome.baobab
-            - Document Scanner: org.gnome.SimpleScan
-            - Document Viewer: org.gnome.Evince
-            - Extension Manager: com.mattjakeman.ExtensionManager
-            - Font Viewer: org.gnome.font-viewer
-            - Image Viewer: org.gnome.eog
-            - Logs: org.gnome.Logs
-            - Maps: org.gnome.Maps
-            - Photos (Organizer): org.gnome.Photos
-            - Sushi (Nautilus Previewer): org.gnome.NautilusPreviewer
-            - Text Editor: org.gnome.TextEditor
-            - Videos (Player): org.gnome.Totem
-            - Weather: org.gnome.Weather
+            - Calculator: org.kde.kcalc
+            - Disk Usage Analyzer: org.kde.filelight
+            - Document Viewer: org.kde.okular
+            - Image Viewer: org.kde.gwenview
+            - Videos Editor: org.kde.kdenlive
         System Apps:
           description: System applications for all desktop environments.
-          default: true
+          default: false
           packages:
             - Deja Dup Backups: org.gnome.DejaDup
             - Fedora Media Writer: org.fedoraproject.MediaWriter
@@ -106,6 +91,8 @@ screens:
             - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
             - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
             - Proton Updater for Steam: net.davidotek.pupgui2
+            - Lutris: net.lutris.Lutris
+            - XIVlauncher: dev.goats.xivlauncher
         Office:
           description: Boost your productivity.
           default: false
