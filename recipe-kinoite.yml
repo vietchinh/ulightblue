@@ -29,13 +29,14 @@ scripts:
     - autorun.sh
     # Manually listed scripts.
     - udev_services.sh
+    - auto-update.sh
 
   # "Post" scripts run at the end of the build process.
   post:
     # Automatically runs script files within "scripts/post/".
     - autorun.sh
     # Manually listed scripts.
-    - auto-update.sh
+    # - example_post.sh
 
 # Custom RPM configuration.
 # These changes will be integrated into your custom image at the "system level".
