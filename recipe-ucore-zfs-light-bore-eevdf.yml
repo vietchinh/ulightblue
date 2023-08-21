@@ -28,7 +28,8 @@ scripts:
     # Automatically runs script files within "scripts/pre/".
     - autorun.sh
     # Manually listed scripts.
-    - cachyos-kernel-bore-eevdf.sh
+    - ucore-cachyos-kernel-bore-eevdf.sh
+    - uksmd.sh
 
   # "Post" scripts run at the end of the build process.
   post:

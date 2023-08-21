@@ -29,7 +29,8 @@ scripts:
     - autorun.sh
     # Manually listed scripts.
     - kinoite.sh
-    - cachyos-kernel-bore-eevdf.sh
+    - kinoite-cachyos-kernel-bore-eevdf.sh
+    - uksmd.sh
 
   # "Post" scripts run at the end of the build process.
   post:

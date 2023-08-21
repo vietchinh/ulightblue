@@ -29,7 +29,7 @@ scripts:
     - autorun.sh
     # Manually listed scripts.
     - kinoite.sh
-    - cachyos-kernel-bore-eevdf.sh
+    - kinoite-cachyos-kernel-bore-eevdf.sh
 
   # "Post" scripts run at the end of the build process.
   post:
@@ -37,6 +37,7 @@ scripts:
     - autorun.sh
     # Manually listed scripts.
     - kinoite-systemd.sh
+    - uksmd.sh
 
 # Custom RPM configuration.
 # These changes will be integrated into your custom image at the "system level".
