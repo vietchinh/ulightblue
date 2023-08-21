@@ -6,4 +6,5 @@
 set -oue pipefail
 
 # Your code goes here.
-sudo rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-bore-eevdf
+sudo rpm-ostree override remove kernel kernel-core kernel-modules kernel-modules-core kernel-modules-extra --install kernel-cachyos-bore-eevdf libcap-ng-devel procps-ng-devel uksmd
+systemctl enable uksmd.service
