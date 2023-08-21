@@ -50,6 +50,7 @@ jobs:
           - recipe-ucore-zfs-light.yml
           - recipe-ucore-zfs-lxd.yml
           - recipe-kinoite-light.yml
+          - recipe-kinoite-light-bore-eevdf.yml
           - recipe-kinoite-with-libvirt.yml
           - recipe-kinoite-with-libvirt-bore-eevdf.yml
 
