@@ -7,5 +7,5 @@ rules:
     upstream: template
     mergeMethod: rebase
   - base: live
-    upstream: template
+    upstream: master
     mergeMethod: merge
