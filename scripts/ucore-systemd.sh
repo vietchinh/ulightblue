@@ -6,30 +6,4 @@
 set -oue pipefail
 
 # Your code goes here.
-cat > /usr/etc/lib/systemd/system/rpm-ostreed-upgrade-reboot.service << EOF
-# workaround for missing reboot policy
-# https://github.com/coreos/rpm-ostree/issues/2843
-[Unit]
-Description=rpm-ostree upgrade and reboot
-ConditionPathExists=/run/ostree-booted
-
-[Service]
-Type=simple
-ExecStart=/usr/bin/rpm-ostree upgrade --reboot
-#StandardOutput=null
-EOF
-
-cat > /usr/etc/lib/systemd/system/rpm-ostreed-upgrade-reboot.timer << EOF
-[Unit]
-Description=rpm-ostree upgrade and reboot trigger on every first monday of the month
-ConditionPathExists=/run/ostree-booted
-
-[Timer]
-OnCalendar=Mon *-*-1..7 03:00:00
-Persistent=true
-
-[Install]
-WantedBy=timers.target
-EOF
-
 systemctl enable rpm-ostreed-upgrade-reboot.timer
