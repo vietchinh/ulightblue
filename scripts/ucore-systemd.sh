@@ -7,3 +7,4 @@ set -oue pipefail
 
 # Your code goes here.
 systemctl enable rpm-ostreed-upgrade-reboot.timer
+systemctl disable rpm-ostreed-automatic.timer
