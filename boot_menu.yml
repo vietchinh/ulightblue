@@ -1,6 +1,6 @@
 ublue_variants:
   - label: vietchinh/ulightblue
-    ks: /kickstart/ulightblue.ks
+    ks: /kickstart/ublue-os.ks
     flavors:
       - label: ublue-kinoite-light
         info: Ublue Kinoite extra bloat removed
