@@ -8,5 +8,5 @@ set -oue pipefail
 # Your code goes here.
 rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-update-services.noarch.rpm /tmp/ublue-os-udev-rules.noarch.rpm
 
-wget https://raw.githubusercontent.com/ublue-os/main/main/post-install.sh -P /tmp/scripts/post
-chmod +x /tmp/scripts/post/post-install.sh
+wget https://raw.githubusercontent.com/ublue-os/main/main/main-post-install.sh -P /tmp/scripts/post
+chmod +x /tmp/scripts/post/main-post-install.sh
