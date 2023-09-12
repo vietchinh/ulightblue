@@ -19,6 +19,8 @@ modules:
                   # read more in the files module's README
 
   - type: rpm-ostree
+    repos:
+    install:
     remove:
       - moby-engine
       - toolbox
@@ -45,5 +47,7 @@ modules:
         - rpm-ostreed-upgrade-reboot.timer
       disable:
         - rpm-ostreed-automatic.timer
-
+    user:
+      disable:
+      enable:
 

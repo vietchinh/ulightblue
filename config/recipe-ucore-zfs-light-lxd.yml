@@ -21,6 +21,7 @@ modules:
   - type: rpm-ostree
     repos:
       - https://copr.fedorainfracloud.org/coprs/ganto/lxc4/repo/fedora-%OS_VERSION%/ganto-lxc4-fedora-%OS_VERSION%.repo
+    install:
     remove:
       - moby-engine
       - toolbox
@@ -47,3 +48,6 @@ modules:
         - rpm-ostreed-upgrade-reboot.timer
       disable:
         - rpm-ostreed-automatic.timer
+    user:
+      disable:
+      enable:
