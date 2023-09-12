@@ -18,7 +18,6 @@ modules:
                   # read more in the files module's README
 
   - from-file: kinoite-light-packages.yml
-  #- from-file: kinoite-light-bling.yml
   - from-file: kinoite-light-yafti.yml
   - from-file: kinoite-light-systemd.yml
   - from-file: kinoite-light-script.yml
