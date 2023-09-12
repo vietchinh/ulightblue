@@ -22,4 +22,3 @@ modules:
   - from-file: kinoite-light-yafti.yml
   - from-file: kinoite-light-systemd.yml
   - from-file: kinoite-light-script.yml
-  - from-file: kinoite-light-script-post.yml
