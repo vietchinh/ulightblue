@@ -17,14 +17,7 @@ modules:
           # configuration you wish to end up in /etc/ on the booted system should be
           # added into /usr/etc/ as that is the proper "distro" config directory on ostree
         # read more in the files module's README
-
-  - from-file: kinoite-light-packages.yml
-
   - from-file: kinoite-light-yafti.yml
-
-  - from-file: kinoite-light-systemd.yml
-
-  - from-file: kinoite-light-script.yml
 
   - type: rpm-ostree
     repos:
@@ -41,9 +34,38 @@ modules:
       - htop
       - hwloc-gui
     remove:
-      # -
+      - firefox
+      - firefox-langpacks
+      - kf5-akonadi-server-mysql
+      - kf5-akonadi-server
+      - kmousetool
+      - okular
+      - krfb-libs
+      - krfb
+      - kmag
+      - mariadb-backup
+      - mariadb-cracklib-password-check
+      - mariadb-common
+      - mariadb-server-utils
+      - mariadb-server
+      - mariadb-errmsg
+      - mariadb-gssapi-server
+      - mariadb
+      - filelight
+      - gwenview
+      - gwenview-libs
+      - mariadb-connector-c
+      - mariadb-connector-c-config
+      - perl-DBD-MariaDB
+      - qt5-qtbase-mysql
 
   - type: systemd
     system:
       enable:
         - libvirt.service
+    user:
+      enable:
+        - podman.service
+        - podman-auto-update.timer
+
+  - from-file: kinoite-light-script.yml
