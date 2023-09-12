@@ -50,7 +50,11 @@ modules:
   - from-file: kinoite-light-yafti.yml
 
   - type: systemd
+    system:
+      enable:
+      disable:
     user:
+      disable:
       enable:
         - podman.service
         - podman-auto-update.timer

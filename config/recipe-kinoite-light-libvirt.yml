@@ -63,7 +63,9 @@ modules:
     system:
       enable:
         - libvirt.service
+      disable:
     user:
+      disable:
       enable:
         - podman.service
         - podman-auto-update.timer

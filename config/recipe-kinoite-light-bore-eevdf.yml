@@ -67,7 +67,9 @@ modules:
     system:
       enable:
         - uksmd.service
+      disable:
     user:
+      disable:
       enable:
         - podman.service
         - podman-auto-update.timer
