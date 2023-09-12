@@ -74,13 +74,9 @@ modules:
     system:
       enable:
         - uksmd.service
-        - libvirt.service
-      disable:
     user:
-      disable:
       enable:
         - podman.service
         - podman-auto-update.timer
-
 
   - from-file: kinoite-light-script.yml
