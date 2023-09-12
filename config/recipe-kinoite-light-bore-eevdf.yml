@@ -10,7 +10,6 @@ image-version: 38 # latest is also supported if you want new updates ASAP
 # list of modules, executed in order
 # you can include multiple instances of the same module
 modules:
-
   - type: files
     files:
       - usr: /usr # copy static configurations
@@ -19,11 +18,8 @@ modules:
         # read more in the files module's README
 
   - from-file: kinoite-light-packages.yml
-
   - from-file: kinoite-light-yafti.yml
-
   - from-file: kinoite-light-systemd.yml
-
   - from-file: kinoite-light-script.yml
 
   - type: rpm-ostree
