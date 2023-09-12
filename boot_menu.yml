@@ -1,5 +1,12 @@
 ublue_variants:
-  - label: ublue-os/startingpoint
+  - label: vietchinh/ulightblue
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: startingpoint
+      - label: ublue-kinoite-light
+        info: Ublue Kinoite extra bloat removed
+      - label: ublue-kinoite-bore-eevdf
+        info: Ublue Kinoite light with bore eevdf kernel scheduler
+      - label: ublue-kinoite-with-libvirt
+        info: Ublue Kinoite light with libvirt
+      - label: ublue-kinoite-with-libvirt-bore-eevdf
+        info: Ublue Kinoite light with libvirt and bore eevdf kernel scheduler
