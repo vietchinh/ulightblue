@@ -18,10 +18,32 @@ modules:
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
 
-  - from-file: ucore-light-packages.yml
+  - type: rpm-ostree
+    remove:
+      - moby-engine
+      - toolbox
+      - distrobox
+      - lzop
+      - mbuffer
+      - perl-Capture-Tiny
+      - perl-Config-IniFiles
+      - podman-compose
+      - pv
+      - qemu-guest-agent
+      - tailscale
+      - tmux
+      - vim-enhanced
+      - wireguard-tools
+      - xdg-dbus-proxy
+      - xdg-user-dirs
 
   - from-file: ucore-light-script.yml
 
-  - from-file: ucore-light-systemd.yml
+  - type: systemd
+    system:
+      enable:
+        - rpm-ostreed-upgrade-reboot.timer
+      disable:
+        - rpm-ostreed-automatic.timer
 
 
