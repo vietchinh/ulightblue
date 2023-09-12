@@ -48,9 +48,9 @@ modules:
       - signing.sh
       - ucore-systemd.sh
 
-  - type: systemd
-    system:
-      enable:
-        - rpm-ostreed-upgrade-reboot.timer
-      disable:
-        - rpm-ostreed-automatic.timer
+#  - type: systemd
+#    system:
+#      enable:
+#        - rpm-ostreed-upgrade-reboot.timer
+#      disable:
+#        - rpm-ostreed-automatic.timer
