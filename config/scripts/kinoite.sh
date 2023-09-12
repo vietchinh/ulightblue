@@ -9,4 +9,4 @@ set -oue pipefail
 rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-update-services.noarch.rpm /tmp/ublue-os-udev-rules.noarch.rpm
 
 wget https://raw.githubusercontent.com/ublue-os/main/main/main-post-install.sh -P /tmp/config/scripts
-chmod +x /tmp/config/scriptsmain-post-install.sh
+chmod +x /tmp/config/scripts/main-post-install.sh
