@@ -19,7 +19,9 @@ modules:
                   # read more in the files module's README
 
   - from-file: ucore-light-packages.yml
+
   - from-file: ucore-light-script.yml
+
   - from-file: ucore-light-systemd.yml
 
 
