@@ -39,8 +39,12 @@ jobs:
         # Add recipes for all the images you want to build here.
         # Don't add module configuration files, you will get errors.
         recipe:
-          - recipe.yml
-# !!!
+          - recipe-ucore-zfs-light.yml
+          - recipe-ucore-zfs-light-lxd.yml
+          - recipe-kinoite-light.yml
+          - recipe-kinoite-with-libvirt.yml
+          - recipe-kinoite-with-libvirt-bore-eevdf.yml
+    # !!!
 
     steps:
       - name: Maximize build space
