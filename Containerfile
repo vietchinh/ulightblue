@@ -43,7 +43,7 @@ COPY modules /tmp/modules/
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /tmp/
-COPY --from=ghcr.io/ublue-os/config:latest /files/ublue-os/update-services /
+COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /tmp/
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/
 
 # Run the build script, then clean up temp files and finalize container build.
