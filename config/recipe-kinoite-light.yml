@@ -17,66 +17,9 @@ modules:
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
 
-  - type: rpm-ostree
-    repos:
-      # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
-    install:
-      # - micro
-      # - starship
-    remove:
-      - firefox # default firefox removed in favor of flatpak
-      - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
-      - kf5-akonadi-server-mysql
-      - kf5-akonadi-server
-      - kmousetool
-      - okular
-      - krfb-libs
-      - krfb
-      - kmag
-      - mariadb-backup
-      - mariadb-cracklib-password-check
-      - mariadb-common
-      - mariadb-server-utils
-      - mariadb-server
-      - mariadb-errmsg
-      - mariadb-gssapi-server
-      - mariadb
-      - filelight
-      - gwenview
-      - gwenview-libs
-      - mariadb-connector-c
-      - mariadb-connector-c-config
-      - perl-DBD-MariaDB
-      - qt5-qtbase-mysql
-
-  - type: bling # configure what to pull in from ublue-os/bling
-    install:
-      - fonts # selection of common good free fonts
-      -
-      # - ublue-update # https://github.com/ublue-os/ublue-update
-      # - dconf-update-service # a service unit that updates the dconf db on boot
-      # - devpod # https://devpod.sh/ as an rpm
-
-
-  - type: yafti # if included, yafti and it's dependencies (pip & libadwaita)
-                #  will be installed and set up
-    custom-flatpaks: # this section is optional
-      # - Celluloid: io.github.celluloid_player.Celluloid
-      # - Krita: org.kde.krita
-
-  - type: systemd
-    user:
-      enable:
-        - podman.service
-        - podman-auto-update.timer
-
-  - type: script
-    scripts:
-      # this sets up the proper policy & signing files for signed images to work
-      - signing.sh
-      - kinoite.sh
-
-  - type: script
-    scripts:
-      # this sets up the proper policy & signing files for signed images to work
-      - main-post-install.sh
+  - from-file: kinoite-light-packages.yml
+  #- from-file: kinoite-light-bling.yml
+  - from-file: kinoite-light-yafti.yml
+  - from-file: kinoite-light-systemd.yml
+  - from-file: kinoite-light-script.yml
+  - from-file: kinoite-light-script-post.yml
