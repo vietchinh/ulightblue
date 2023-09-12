@@ -10,6 +10,7 @@ image-version: stable-zfs # latest is also supported if you want new updates ASA
 # list of modules, executed in order
 # you can include multiple instances of the same module
 modules:
+
   - type: files
     files:
       - usr: /usr # copy static configurations
@@ -18,7 +19,9 @@ modules:
         # read more in the files module's README
 
   - from-file: ucore-light-packages.yml
+
   - from-file: ucore-light-script.yml
+
   - from-file: ucore-light-systemd.yml
 
   - type: rpm-ostree
