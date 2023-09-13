@@ -52,3 +52,4 @@ modules:
     system:
       enable:
         - uksmd.service
+        - libvirtd.service
