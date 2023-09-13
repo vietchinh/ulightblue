@@ -50,6 +50,6 @@ modules:
 
   - type: systemd
     system:
-      enable:
+      enabled:
         - uksmd.service
         - libvirtd.service
