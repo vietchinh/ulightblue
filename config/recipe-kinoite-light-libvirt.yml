@@ -42,4 +42,4 @@ modules:
   - type: systemd
     system:
       enable:
-        - libvirt.service
+        - libvirtd.service
