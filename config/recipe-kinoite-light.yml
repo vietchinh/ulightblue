@@ -29,8 +29,6 @@ modules:
 
   - type: rpm-ostree
     install:
-      - /tmp/ublue-os-udev-rules.noarch.rpm
-      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
       - steam-devices
     remove:
       - firefox # default firefox removed in favor of flatpak
@@ -68,5 +66,4 @@ modules:
     scripts:
       # this sets up the proper policy & signing files for signed images to work
       - signing.sh
-      - kinoite.sh
       - main-post-install.sh
