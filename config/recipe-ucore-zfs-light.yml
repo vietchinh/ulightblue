@@ -17,9 +17,40 @@ modules:
                   # configuration you wish to end up in /etc/ on the booted system should be 
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
+  - type: rpm-ostree
+    remove:
+    - moby-engine
+    - toolbox
+    - distrobox
+    - lzop
+    - mbuffer
+    - perl-Capture-Tiny
+    - perl-Config-IniFiles
+    - podman-compose
+    - pv
+    - qemu-guest-agent
+    - tailscale
+    - tmux
+    - vim-enhanced
+    - wireguard-tools
+    - xdg-dbus-proxy
+    - xdg-user-dirs
 
-  - from-file: ucore-light-packages.yml
-  - from-file: ucore-light-script.yml
-  - from-file: ucore-light-systemd.yml
+  - type: script
+    scripts:
+      # this sets up the proper policy & signing files for signed images to work
+      - signing.sh
+      - ucore-systemd.sh
+
+  - type: systemd
+    system:
+      enabled:
+        - rpm-ostreed-upgrade-reboot.timer
+      disabled:
+        - rpm-ostreed-automatic.timer
+
+#  - from-file: ucore-light-packages.yml
+#  - from-file: ucore-light-script.yml
+#  - from-file: ucore-light-systemd.yml
 
 
