@@ -22,7 +22,16 @@ modules:
     # - Celluloid: io.github.celluloid_player.Celluloid
     # - Krita: org.kde.krita
 
+  - type: script
+    scripts:
+      # this sets up the proper policy & signing files for signed images to work
+      - kinoite.sh
+
   - type: rpm-ostree
+    install:
+      - /tmp/ublue-os-udev-rules.noarch.rpm
+      - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-%OS_VERSION%.noarch.rpm
+      - steam-devices
     remove:
       - firefox # default firefox removed in favor of flatpak
       - firefox-langpacks # langpacks needs to also be removed to prevent dependency problems
@@ -61,8 +70,3 @@ modules:
       - signing.sh
       - kinoite.sh
       - main-post-install.sh
-
-  # rpmfusion install section
-  - type: rpm-ostree
-    install:
-      - steam-devices
