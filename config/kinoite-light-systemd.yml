@@ -1,5 +1,0 @@
-type: systemd
-user:
-  enabled:
-    - podman.service
-    - podman-auto-update.timer

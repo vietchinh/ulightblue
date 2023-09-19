@@ -48,9 +48,3 @@ modules:
         - rpm-ostreed-upgrade-reboot.timer
       disabled:
         - rpm-ostreed-automatic.timer
-
-#  - from-file: ucore-light-packages.yml
-#  - from-file: ucore-light-script.yml
-#  - from-file: ucore-light-systemd.yml
-
-
