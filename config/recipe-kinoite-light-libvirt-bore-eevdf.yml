@@ -10,17 +10,19 @@ image-version: 38 # latest is also supported if you want new updates ASAP
 # list of modules, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: files
-    files:
-      - usr: /usr # copy static configurations
+#  - type: files
+#    files:
+#      - usr: /usr # copy static configurations
           # configuration you wish to end up in /etc/ on the booted system should be
           # added into /usr/etc/ as that is the proper "distro" config directory on ostree
         # read more in the files module's README
 
-  - from-file: kinoite-light-packages.yml
-  - from-file: kinoite-light-yafti.yml
-  - from-file: kinoite-light-systemd.yml
-  - from-file: kinoite-light-script.yml
+  - from-file: recipe-kinoite-light-libvirt.yml
+
+#  - from-file: kinoite-light-packages.yml
+#  - from-file: kinoite-light-yafti.yml
+#  - from-file: kinoite-light-systemd.yml
+#  - from-file: kinoite-light-script.yml
 
   - type: rpm-ostree
     repos:
@@ -33,14 +35,14 @@ modules:
       - libcap-ng-devel
       - procps-ng-devel
       - uksmd
-      - qemu-kvm
-      - libvirt
-      - virt-manager
-      - kate
-      - podman
-      - distrobox
-      - htop
-      - hwloc-gui
+#      - qemu-kvm
+#      - libvirt
+#      - virt-manager
+#      - kate
+#      - podman
+#      - distrobox
+#      - htop
+#      - hwloc-gui
     remove:
       - kernel
       - kernel-core
@@ -52,4 +54,4 @@ modules:
     system:
       enabled:
         - uksmd.service
-        - libvirtd.service
+#        - libvirtd.service
