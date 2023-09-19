@@ -1,6 +1,0 @@
-type: systemd
-system:
-  enabled:
-    - rpm-ostreed-upgrade-reboot.timer
-  disabled:
-    - rpm-ostreed-automatic.timer
