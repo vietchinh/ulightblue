@@ -6,7 +6,7 @@
 set -oue pipefail
 
 # Your code goes here.
-rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-udev-rules.noarch.rpm https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+rpm-ostree install --assumeyes --apply-live --force-replacefiles https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 wget https://raw.githubusercontent.com/ublue-os/main/main/main-post-install.sh -P /tmp/config/scripts
 chmod +x /tmp/config/scripts/main-post-install.sh
