@@ -47,6 +47,6 @@ COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/
 
 # Run the build script, then clean up temp files and finalize container build.
-RUN rpm-ostree install --assumeyes --apply-live --force-replacefiles /tmp/ublue-os-signing.noarch.rpm /tmp/ublue-os-update-services.noarch.rpm \
+RUN rpm -ivh /tmp/ublue-os-signing.noarch.rpm && rpm -ivh /tmp/ublue-os-update-services.noarch.rpm \
     && chmod +x /tmp/build.sh && /tmp/build.sh \
     && rm -rf /tmp/* /var/* && rpm-ostree cleanup -m && ostree container commit
