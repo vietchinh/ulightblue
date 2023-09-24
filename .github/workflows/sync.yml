@@ -9,7 +9,7 @@ jobs:
   sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: tgymnich/fork-sync@v1.8
+      - uses: tgymnich/fork-sync@v1.9
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           owner: ublue-os
@@ -17,7 +17,7 @@ jobs:
           head: template
           merge_method: rebase
           auto_approve: true
-      - uses: tgymnich/fork-sync@v1.8
+      - uses: tgymnich/fork-sync@v1.9
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           owner: vietchinh
@@ -25,7 +25,7 @@ jobs:
           head: template
           merge_method: rebase
           auto_approve: true
-      - uses: tgymnich/fork-sync@v1.8
+      - uses: tgymnich/fork-sync@v1.9
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
           owner: vietchinh
