@@ -9,4 +9,4 @@ set -oue pipefail
 rpm -ivh /tmp/ublue-os-udev-rules.noarch.rpm
 
 wget https://raw.githubusercontent.com/ublue-os/main/main/nokmods-post-install.sh -P /tmp/config/scripts
-chmod +x /tmp/config/scripts/main-post-install.sh
+chmod +x /tmp/config/scripts/nokmods-post-install.sh
