@@ -12,7 +12,7 @@ jobs:
       - uses: tgymnich/fork-sync@v1.9
         with:
           token: ${{ secrets.PERSONAL_TOKEN }}
-          owner: ublue-os
+          owner: vietchinh
           base: template
           head: template
           merge_method: rebase
