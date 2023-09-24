@@ -8,5 +8,5 @@ set -oue pipefail
 # Your code goes here.
 rpm -ivh /tmp/ublue-os-udev-rules.noarch.rpm
 
-wget https://raw.githubusercontent.com/ublue-os/main/main/main-post-install.sh -P /tmp/config/scripts
+wget https://raw.githubusercontent.com/ublue-os/main/main/nokmods-post-install.sh -P /tmp/config/scripts
 chmod +x /tmp/config/scripts/main-post-install.sh
