@@ -1,0 +1,35 @@
+name: Sync Fork
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # every 30 minutes
+  workflow_dispatch: # on button click
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: tgymnich/fork-sync@v1.8
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          owner: ublue-os
+          base: template
+          head: template
+          merge_method: rebase
+          auto_approve: true
+      - uses: tgymnich/fork-sync@v1.8
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          owner: vietchinh
+          base: master
+          head: template
+          merge_method: rebase
+          auto_approve: true
+      - uses: tgymnich/fork-sync@v1.8
+        with:
+          token: ${{ secrets.PERSONAL_TOKEN }}
+          owner: vietchinh
+          base: live
+          head: master
+          merge_method: merge
+          auto_approve: true
