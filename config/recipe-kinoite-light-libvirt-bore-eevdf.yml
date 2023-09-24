@@ -21,7 +21,7 @@ modules:
       - kernel-cachyos-bore-eevdf-rt
       - libcap-ng-devel
       - procps-ng-devel
-      - uksmd
+      - uksmd-rawhide
     remove:
       - kernel
       - kernel-core
