@@ -2,7 +2,7 @@ version: "1"
 rules:
   - base: template
     upstream: ublue-os:template
-    mergeMethod: rebase
+    mergeMethod: none
   - base: master
     upstream: template
     mergeMethod: rebase
