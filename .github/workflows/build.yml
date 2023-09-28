@@ -53,7 +53,7 @@ jobs:
         with:
           path: |
             ./
-          key: ${{ runner.os }}-${{ hashFiles('*') }}
+          key: ${{ runner.os }}-${{ hashFiles('./*') }}
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v4
