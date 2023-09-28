@@ -51,7 +51,7 @@ jobs:
       - name: Cache Docker images.
         uses: ScribeMD/docker-cache@0.3.6
         with:
-          key: docker-${{ runner.os }}-${{ hashFiles('./Containerfile') }}
+          key: docker-${{ runner.os }}-${{ hashFiles('*') }}
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v4
@@ -155,6 +155,7 @@ jobs:
             IMAGE_REGISTRY=${{ steps.registry_case.outputs.lowercase }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
+          layers: true
 
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
