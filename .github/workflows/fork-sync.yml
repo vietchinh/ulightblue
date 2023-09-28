@@ -24,8 +24,12 @@ jobs:
       - name: git checkout
         uses: actions/checkout@v4
         with:
-          ref: master
-      - name: automatic rebase master
-        uses: cirrus-actions/rebase@1.8
-        env:
-          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
+          ref: template
+      - name: Commit & Push changes to master
+        uses: actions-js/push@v1.3
+        with:
+          rebase: true
+          message: "chore: auto rebase ${date}"
+          branch: "master"
+          author_email: "1348151+vietchinh@users.noreply.github.com"
+          author_name: "vietchinh"
