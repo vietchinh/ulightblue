@@ -51,6 +51,8 @@ jobs:
       - name: Cache Docker images.
         uses: ScribeMD/docker-cache@0.3.6
         with:
+          path: |
+            ./
           key: docker-${{ runner.os }}-${{ hashFiles('*') }}
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
