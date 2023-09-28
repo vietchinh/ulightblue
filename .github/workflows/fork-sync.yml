@@ -26,8 +26,9 @@ jobs:
         with:
           ref: template
       - name: Commit & Push changes to master
-        uses: actions-js/push@v1.3
+        uses: actions-js/rebase-commit-push@master
         with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           rebase: true
           message: "chore: auto rebase ${date}"
           branch: "master"
