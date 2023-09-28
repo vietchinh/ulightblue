@@ -26,7 +26,7 @@ jobs:
         with:
           ref: template
       - name: Commit & Push changes to master
-        uses: actions/rebase-commit-push@master
+        uses: benkaiser/rebase-commit-push@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           rebase: true
