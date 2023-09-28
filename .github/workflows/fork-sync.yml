@@ -10,13 +10,13 @@ jobs:
       contents: write
     steps:
       - name: sync template
-        run: gh repo sync ublue-os/startingpoint -b template
+        run: gh repo sync vietchinh/ulightblue -b template
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           BRANCH_NAME: ${{ github.ref_name }}
       - name: sync master
-        run: gh repo sync ublue-os/startingpoint -b master
+        run: gh repo sync vietchinh/ulightblue -b master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY: ${{ github.repository }}
