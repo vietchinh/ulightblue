@@ -6,8 +6,7 @@ on:
 jobs:
   sync:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    permissions: write-all
     steps:
       - name: sync template
         run: gh repo sync vietchinh/ulightblue -b template
