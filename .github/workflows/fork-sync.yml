@@ -11,13 +11,13 @@ jobs:
       - name: sync template
         run: gh repo sync vietchinh/ulightblue -b template
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           BRANCH_NAME: ${{ github.ref_name }}
       - name: sync master
         run: gh repo sync vietchinh/ulightblue -b master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           BRANCH_NAME: ${{ github.ref_name }}
       - name: git checkout
@@ -27,7 +27,7 @@ jobs:
       - name: Commit & Push changes to master
         uses: benkaiser/rebase-commit-push@master
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.PERSONAL_TOKEN }}
           rebase: true
           message: "chore: auto rebase ${date}"
           branch: "master"
