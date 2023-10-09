@@ -158,6 +158,7 @@ jobs:
             IMAGE_REGISTRY=${{ steps.registry_case.outputs.lowercase }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
+          layers: true
 
       # Push the image to GHCR (Image Registry)
       - name: Push To GHCR
