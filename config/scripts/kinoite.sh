@@ -8,7 +8,7 @@ set -oue pipefail
 # Your code goes here.
 rpm -ivh https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 rpm -ivh https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-rpm -ivh /tmp/ublue-os-udev-rules.noarch.rpm
+#rpm -ivh /tmp/ublue-os-udev-rules.noarch.rpm
 
 wget https://raw.githubusercontent.com/ublue-os/main/main/nokmods-post-install.sh -P /tmp/config/scripts
 chmod +x /tmp/config/scripts/nokmods-post-install.sh
