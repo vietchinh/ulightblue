@@ -61,3 +61,8 @@ modules:
       - signing.sh
       - kinoite.sh
       - nokmods-post-install.sh
+
+  # rpmfusion install section
+  - type: rpm-ostree
+    install:
+      - steam-devices
