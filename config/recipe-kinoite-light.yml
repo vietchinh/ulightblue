@@ -22,6 +22,11 @@ modules:
     # - Celluloid: io.github.celluloid_player.Celluloid
     # - Krita: org.kde.krita
 
+  - type: script
+    scripts:
+      # this sets up the proper policy & signing files for signed images to work
+      - kinoite.sh
+
   - type: rpm-ostree
     remove:
       - firefox # default firefox removed in favor of flatpak
@@ -59,10 +64,4 @@ modules:
     scripts:
       # this sets up the proper policy & signing files for signed images to work
       - signing.sh
-      - kinoite.sh
       - nokmods-post-install.sh
-
-  # rpmfusion install section
-  - type: rpm-ostree
-    install:
-      - steam-devices
