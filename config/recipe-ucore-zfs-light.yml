@@ -31,7 +31,11 @@ modules:
     - qemu-guest-agent
     - tailscale
     - tmux
-    - vim-enhanced
+    - dbus-tools
+    - open-vm-tools
+    - iwlegacy-firmware
+    - iwlwifi-dvm-firmware
+    - iwlwifi-mvm-firmware
     - wireguard-tools
     - xdg-dbus-proxy
     - xdg-user-dirs
