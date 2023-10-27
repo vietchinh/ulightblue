@@ -29,7 +29,6 @@ modules:
       - kf5-akonadi-server-mysql
       - kf5-akonadi-server
       - kmousetool
-      - okular
       - krfb-libs
       - krfb
       - kmag
