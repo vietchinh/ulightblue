@@ -42,8 +42,6 @@ modules:
       - mariadb-gssapi-server
       - mariadb
       - filelight
-      - gwenview
-      - gwenview-libs
       - mariadb-connector-c
       - mariadb-connector-c-config
       - perl-DBD-MariaDB
