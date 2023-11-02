@@ -18,7 +18,7 @@ modules:
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-fedora-%OS_VERSION%.repo
       - https://copr.fedorainfracloud.org/coprs/bieszczaders/kernel-cachyos-addons/repo/fedora-%OS_VERSION%/bieszczaders-kernel-cachyos-addons-fedora-%OS_VERSION%.repo
     install:
-      - kernel-cachyos-bore-eevdf-rt
+      - kernel-cachyos-rt
       - libcap-ng-devel
       - procps-ng-devel
       - uksmd-rawhide
