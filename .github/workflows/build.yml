@@ -58,6 +58,9 @@ jobs:
       # Checkout push-to-registry action GitHub repository
       - name: Checkout Push to Registry action
         uses: actions/checkout@v4
+        with:
+          ref: live
+
 
       - name: Add yq (for reading recipe.yml)
         uses: mikefarah/yq@v4.40.2
