@@ -42,9 +42,9 @@ modules:
 
   - type: script
     scripts:
+      - ucore.sh
       # this sets up the proper policy & signing files for signed images to work
       - signing.sh
-      - ucore-systemd.sh
 
   - type: systemd
     system:
