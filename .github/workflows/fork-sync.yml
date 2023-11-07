@@ -14,16 +14,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           BRANCH_NAME: ${{ github.ref_name }}
-      - name: git checkout
-        uses: actions/checkout@v4
-        with:
-          ref: template
-      - name: Commit & Push changes to master
-        uses: benkaiser/rebase-commit-push@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          rebase: true
-          message: "chore: auto rebase ${date}"
-          branch: "master"
-          author_email: "1348151+vietchinh@users.noreply.github.com"
-          author_name: "vietchinh"
+      - name: sync main
+        run: gh repo sync vietchinh/ulightblue -b main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          BRANCH_NAME: template
+      - name: sync live
+        run: gh repo sync vietchinh/ulightblue -b live
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPOSITORY: ${{ github.repository }}
+          BRANCH_NAME: template
