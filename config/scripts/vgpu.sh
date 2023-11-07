@@ -11,7 +11,8 @@ ZIP_NAME="NVIDIA-GRID-Linux-KVM-${NVIDIA_VERSION}.06-535.104.05-537.13.zip"
 DEVELOPMENT_PACKAGES="wget p7zip p7zip-plugins mscompress osslsigncode git kernel-devel unzip patch vulkan-loader"
 
 rpm-ostree install "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" "https://github.com/rpmsphere/noarch/raw/master/r/rpmsphere-release-$(rpm -E %fedora)-1.noarch.rpm"
-rpm-ostree install "${DEVELOPMENT_PACKAGES}" vulkan-loader
+# shellcheck disable=SC2086
+rpm-ostree install ${DEVELOPMENT_PACKAGES} vulkan-loader
 
 git clone --recursive https://github.com/VGPU-Community-Drivers/vGPU-Unlock-patcher.git -b ${NVIDIA_VERSION}
 
