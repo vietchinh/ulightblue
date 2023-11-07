@@ -42,11 +42,6 @@ COPY modules /tmp/modules/
 # It is copied from the official container image since it's not available as an RPM.
 COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 
-COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /tmp/
-COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-update-services.noarch.rpm /tmp/
-COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/
-
 # Run the build script, then clean up temp files and finalize container build.
-RUN rpm -ivh /tmp/ublue-os-signing.noarch.rpm && rpm -ivh /tmp/ublue-os-update-services.noarch.rpm \
-    && chmod +x /tmp/build.sh && /tmp/build.sh \
+RUN chmod +x /tmp/build.sh && /tmp/build.sh \
     && rm -rf /tmp/* /var/* && rpm-ostree cleanup -m && ostree container commit
