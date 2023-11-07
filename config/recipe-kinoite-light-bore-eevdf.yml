@@ -13,6 +13,10 @@ modules:
 
   - from-file: recipe-kinoite-light.yml
 
+  - type: rpm-ostree
+    install:
+      - uksmd-rawhide
+
   - type: systemd
     system:
       enabled:
