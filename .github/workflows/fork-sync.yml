@@ -15,7 +15,7 @@ jobs:
           REPOSITORY: ${{ github.repository }}
           BRANCH_NAME: template
       - name: sync main
-        run: gh repo sync vietchinh/ulightblue -b main
+        run: gh repo sync vietchinh/ulightblue -b master
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
           REPOSITORY: ${{ github.repository }}
