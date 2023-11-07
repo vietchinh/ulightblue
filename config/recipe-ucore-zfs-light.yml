@@ -22,7 +22,6 @@ modules:
     - moby-engine
     - toolbox
     - distrobox
-    - lzop
     - mbuffer
     - perl-Capture-Tiny
     - perl-Config-IniFiles
