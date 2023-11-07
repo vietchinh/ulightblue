@@ -41,6 +41,7 @@ jobs:
         recipe:
           - recipe-ucore-zfs-light.yml
           - recipe-ucore-zfs-light-lxd.yml
+          - recipe-ucore-zfs-light-hci-vgpu.yml
           - recipe-kinoite-light.yml
           - recipe-kinoite-light-bore-eevdf.yml
           - recipe-kinoite-light-libvirt.yml
