@@ -38,4 +38,3 @@ KERNEL_VERSION="$(rpm -q kernel-devel --queryformat '%{VERSION}-%{RELEASE}.%{ARC
 
 cd ..
 rm -rf ${VGPU_FOLDER}
-rpm-ostree remove "${DEVELOPMENT_PACKAGES}" "rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm" "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm" "https://github.com/rpmsphere/noarch/raw/master/r/rpmsphere-release-$(rpm -E %fedora)-1.noarch.rpm"
