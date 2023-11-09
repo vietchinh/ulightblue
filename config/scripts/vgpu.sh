@@ -33,7 +33,7 @@ chmod +x patch.sh
 
 ./patch.sh general-merge
 
-./NVIDIA-Linux-x86_64-535.104.05-merged-vgpu-kvm-patched/nvidia-installer -s --kernel-source-path /usr/src/kernels/"${KERNEL_VERSION}" --no-systemd --dkms
+./NVIDIA-Linux-x86_64-535.104.05-merged-vgpu-kvm-patched/nvidia-installer -s --kernel-source-path /usr/src/kernels/"${KERNEL_VERSION}" --no-systemd --no-dkms
 
 cd ..
 rm -rf ${VGPU_FOLDER}
