@@ -11,18 +11,18 @@ jobs:
       - name: sync template
         run: gh repo sync vietchinh/ulightblue -b template
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FORK_SYNC_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           BRANCH_NAME: template
       - name: sync main
         run: gh repo sync vietchinh/ulightblue -b master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FORK_SYNC_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           BRANCH_NAME: template
       - name: sync live
         run: gh repo sync vietchinh/ulightblue -b live
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.FORK_SYNC_TOKEN }}
           REPOSITORY: ${{ github.repository }}
           BRANCH_NAME: template
